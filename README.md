@@ -117,7 +117,7 @@ Apply for upgrading your node token.
 
 Params:
 
-+ _toLvl: the next level index. Notice that a normal node token cannot upgrade to X node token.
++ _toLvl: the next level index.
 
 
 | Level Index | Level Name                  |
