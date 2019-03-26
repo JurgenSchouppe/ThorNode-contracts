@@ -29,9 +29,14 @@ contract TokenAuction is XOwnership {
         address _winner,
         uint256 _finalPrice
     );
-    
+
     event AddAuctionWhiteList(uint256 indexed _auctionId, uint256 indexed _tokenId, address indexed _candidate);
     event RemoveAuctionWhiteList(uint256 indexed _auctionId, uint256 indexed _tokenId, address indexed _candidate);
+
+    constructor(address requiredTokenAddress) public XOwnership(requiredTokenAddress) {
+
+
+    }
 
     /// @dev Sets the reference to the sale auction.
     /// @param _address - Address of sale contract.
@@ -61,7 +66,7 @@ contract TokenAuction is XOwnership {
 
         // Does some ownership trickery to create auctions in one tx.
         _approve(_tokenId, saleAuction);
-        
+
         auctionCount = auctionCount.add(1);
         // If token is already on any auction, this will throw
         saleAuction.createAuction(
@@ -101,7 +106,7 @@ contract TokenAuction is XOwnership {
         _approve(_tokenId, saleAuction);
 
         auctionCount = auctionCount.add(1);
-        
+
         // If token is already on any auction, this will throw
         saleAuction.createAuction(
             auctionCount,
@@ -153,7 +158,7 @@ contract TokenAuction is XOwnership {
     }
 
     /// @dev Add condidate for the auction of the passed token.
-    function addAuctionWhiteList(uint256 _tokenId, address _address) 
+    function addAuctionWhiteList(uint256 _tokenId, address _address)
         public
         whenNotPaused
     {
@@ -167,7 +172,7 @@ contract TokenAuction is XOwnership {
     }
 
     /// @dev Remove address from whitelist.
-    function removeAuctionWhiteList(uint256 _tokenId, address _address) 
+    function removeAuctionWhiteList(uint256 _tokenId, address _address)
         public
         whenNotPaused
     {

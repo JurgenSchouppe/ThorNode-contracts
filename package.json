@@ -1,0 +1,25 @@
+{
+  "name": "thornode-contracts",
+  "version": "1.0.0",
+  "description": "VeChainThor Node Token ====",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Safehaven-io/ThorNode-contracts.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Safehaven-io/ThorNode-contracts/issues"
+  },
+  "homepage": "https://github.com/Safehaven-io/ThorNode-contracts#readme",
+  "dependencies": {
+    "truffle": "^4.1.15"
+  }
+}
