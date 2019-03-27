@@ -1,5 +1,7 @@
-VeChainThor Node Token
+SafeHaven Node Token
 ====
+
+Contracts for SafeHaven Node Token on the VeChainThor blockchain.
 
 ## Install
 
@@ -22,15 +24,6 @@ VeChainThor Node Token
         Commands:
         deploy                 deploy the contracts
 
-
-
-
-====
-
-VeChainThor Node Token
-====
-
-Contracts for VeChainThor Node Token on the VeChainThor blockchain.
 
 # Table of Contents
 - [Project Construct](#project-construct)
@@ -146,19 +139,33 @@ Apply for upgrading your node token.
 
 Params:
 
-+ _toLvl: the next level index. Notice that a normal node token cannot upgrade to X node token.
++ _toLvl: the next level index.
 
 
 | Level Index | Level Name                  |
 | ----------- | --------------------------- |
-| 1           | VeChainThor Strength Node   |
-| 2           | VeChainThor Thunder Node    |
-| 3           | VeChainThor Mjolnir Node    |
-| 4           | VeChainThor X Node          |
-| 5           | VeChainThor Strength X Node |
-| 6           | VeChainThor Thunder X Node  |
-| 7           | VeChainThor Mjolnir X Node  |
+| 1           | SafeHaven Connect Node      |
+| 2           | SafeHaven Harbor Node       |
+| 3           | SafeHaven Consensus Node    |
+| 4           | SafeHaven Legacy Node       |
 
+## enum strengthLevel {
+        None,
+        Connect,
+        Harbor,
+        Consensus,
+        Legacy
+    }
+
+## constructor(address requiredTokenAddress) public {
+        requiredToken = IVIP181(requiredTokenAddress);
+        // the index of valid tokens should start from 1
+        tokens.push(Token(0, 0, false, strengthLevel.None, 0));
+        strengthParams[1] = TokenParameters(1000000 ether, 30, 0);     // Connect
+        strengthParams[2] = TokenParameters(2500000 ether, 45, 8);    // Harbor
+        strengthParams[3] = TokenParameters(10000000 ether, 60, 32);  // Consensus
+        strengthParams[4] = TokenParameters(30000000 ether, 90, 57);  // Legacy
+    }	
 
 ## cancelUpgrade
 
