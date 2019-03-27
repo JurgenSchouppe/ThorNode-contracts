@@ -15,6 +15,7 @@ program
     .version('0.0.1')
     .option('--endpoint <endpoint>', '[required] Thor RESTful Endpoint', '')
     .option('--operator <priv>', '[optional] Private Key with 0x prefixed', '')
+    .option('--token <address>', '[required] Address of the token for required balances', '')
 
 program
     .command('deploy')
@@ -30,7 +31,7 @@ let compiled = {}
 program.parse(process.argv)
 
 async function doDeploy() {
-    if (!program.endpoint || !/^http(s)?/.test(program.endpoint)) {
+    if (!program.token || !program.endpoint || !/^http(s)?/.test(program.endpoint)) {
         return program.help()
     }
 
@@ -52,11 +53,11 @@ async function doDeploy() {
     console.log()
     let contractPath = path.join(__dirname, '../contracts')
     compiled = compiler.compile(contractPath)
- 
+
     console.log(`\n√ compile successfully`)
 
     // deploy token contract
-    return _deployContract('TokenAuction.sol:TokenAuction')
+    return _deployContract('TokenAuction.sol:TokenAuction', {args: [program.token]})
     .then(() => {
         // deploy auction contract
         let args = [output['TokenAuction.sol:TokenAuction'], operator.address]
