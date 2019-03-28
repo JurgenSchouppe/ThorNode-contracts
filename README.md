@@ -11,7 +11,7 @@ Contracts for SafeHaven Node Token on the VeChainThor blockchain.
 
 ### Deploy the contracts
 
-        node src/cli.js deploy --endpoint http://localhost:8669 --operator <your_deploy_privatekey>
+        node src/cli.js deploy --endpoint http://localhost:8669 --operator <your_deploy_privatekey> --token 0x123...
 
         Usage: cli [options] [command]
 
@@ -19,6 +19,7 @@ Contracts for SafeHaven Node Token on the VeChainThor blockchain.
         -V, --version          output the version number
         --endpoint <endpoint>  [required] Thor RESTful Endpoint (default: "")
         --operator <priv>      [optional] Private Key with 0x prefixed (default: "")
+        --token <address>      [required] Token that we use to check required balances
         -h, --help             output usage information
 
         Commands:
@@ -94,8 +95,10 @@ The smart contracts are split into modules.
 
 # Contract Address
 
-+ TokenAuction: `0xb81E9C5f9644Dec9e5e3Cac86b4461A222072302`
-+ ClockAuction: `0xE28cE32d637eb93cBDa105f87FBB829E9ef8540B`
+## Testnet
+
++ TokenAuction: `0x2890E2fD4522EA0f48F506FfD0f301ef5Cf98644`
++ ClockAuction: `0x8e9340B2F880809CCefC829EbB1d55922fDab28F`
 
 
 # API
