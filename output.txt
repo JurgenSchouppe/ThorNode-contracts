@@ -1,0 +1,1 @@
+{"TokenAuction.sol:TokenAuction":"0x2890E2fD4522EA0f48F506FfD0f301ef5Cf98644","auction/ClockAuction.sol:ClockAuction":"0x8e9340B2F880809CCefC829EbB1d55922fDab28F"}

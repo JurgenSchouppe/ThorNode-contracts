@@ -3,27 +3,49 @@ SafeHaven Node Token
 
 Contracts for SafeHaven Node Token on the VeChainThor blockchain.
 
+## Install
+
+        npm install
+
+## Usage
+
+### Deploy the contracts
+
+        node src/cli.js deploy --endpoint http://localhost:8669 --operator <your_deploy_privatekey>
+
+        Usage: cli [options] [command]
+
+        Options:
+        -V, --version          output the version number
+        --endpoint <endpoint>  [required] Thor RESTful Endpoint (default: "")
+        --operator <priv>      [optional] Private Key with 0x prefixed (default: "")
+        -h, --help             output usage information
+
+        Commands:
+        deploy                 deploy the contracts
+
+
 # Table of Contents
-- [Project Construct](#project-construct)  
-- [Contracts Overview](#contracts-overview)  
-        - [TokenAuction.sol](#tokenauctionsol)  
-        - [ClockAuction.sol](#clockauctionsol)  
-- [Contract Address](#contract-address)  
-- [API](#api)  
-        - [getMetadata](#getmetadata)  
-        - [applyUpgrade](#applyupgrade)  
-        - [cancelUpgrade](#cancelupgrade)  
-        - [getTokenParams](#gettokenparams)  
-        - [idToOwner](#idtoowner)  
-        - [ownerToId](#ownertoid)  
-        - [createSaleAuction](#createsaleauction)  
-        - [createDirectionalSaleAuction](#createdirectionalsaleauction)  
-        - [bid](#bid)  
-        - [cancelAuction](#cancelauction)  
-        - [addAuctionWhiteList](#addauctionwhitelist)  
-        - [removeAuctionWhiteList](#removeauctionwhitelist)  
-- [Audit Report](#audit-report)  
-- [License](#license)  
+- [Project Construct](#project-construct)
+- [Contracts Overview](#contracts-overview)
+        - [TokenAuction.sol](#tokenauctionsol)
+        - [ClockAuction.sol](#clockauctionsol)
+- [Contract Address](#contract-address)
+- [API](#api)
+        - [getMetadata](#getmetadata)
+        - [applyUpgrade](#applyupgrade)
+        - [cancelUpgrade](#cancelupgrade)
+        - [getTokenParams](#gettokenparams)
+        - [idToOwner](#idtoowner)
+        - [ownerToId](#ownertoid)
+        - [createSaleAuction](#createsaleauction)
+        - [createDirectionalSaleAuction](#createdirectionalsaleauction)
+        - [bid](#bid)
+        - [cancelAuction](#cancelauction)
+        - [addAuctionWhiteList](#addauctionwhitelist)
+        - [removeAuctionWhiteList](#removeauctionwhitelist)
+- [Audit Report](#audit-report)
+- [License](#license)
 
 
 # Project Construct
@@ -80,7 +102,7 @@ The smart contracts are split into modules.
 
 ## getMetadata
 
-        function getMetadata(uint256 _tokenId) public view 
+        function getMetadata(uint256 _tokenId) public view
                 returns(
                         address owner,
                         uint8 level,
@@ -104,7 +126,7 @@ Return:
 + level: the level of the token
 + isOnUpgrade: return true when the token is upgrading
 + isOnAuction: return true when the token is on auction
-+ lastTransferTime: the timestamp that the token 
++ lastTransferTime: the timestamp that the token
 + createdAt: when the token is genearted
 + updatedAt: when the token data is updated
 
@@ -239,7 +261,7 @@ Params:
 + _price: the selling price
 + _duration: the duration of the auction from 2 hours to 7 days
 + _toAddress: the receiver address
-  
+
 
 ## bid
 

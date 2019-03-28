@@ -23,7 +23,7 @@ contract XOwnership is ThunderFactory, IVIP181Basic, SupportsInterface {
 
     string internal tokenMetadataBaseURI = "";
 
-    constructor() public {
+    constructor(address requiredTokenAddress) public ThunderFactory(requiredTokenAddress) {
         // register the supported interfaces to conform to VIP181 via ERC165
         _registerInterface(InterfaceId_VIP181);
         _registerInterface(InterfaceId_VIP181Metadata);
