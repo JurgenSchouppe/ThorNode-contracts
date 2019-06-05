@@ -24,7 +24,10 @@ Contracts for SafeHaven Node Token on the VeChainThor blockchain.
 
         Commands:
         deploy                 deploy the contracts
+        
+# Safe Node Token Diagram
 
+![ContracOverview](images/ContracOverview.png)
 
 # Table of Contents
 - [Project Construct](#project-construct)
