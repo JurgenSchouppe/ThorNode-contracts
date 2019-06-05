@@ -27,7 +27,7 @@ Contracts for SafeHaven Node Token on the VeChainThor blockchain.
         
 # Safe Node Token Diagram
 
-![ContracOverview](images/ContracOverview.png)
+![ContracOverview](images/diagram.png)
 
 # Table of Contents
 - [Project Construct](#project-construct)
