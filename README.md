@@ -103,6 +103,10 @@ The smart contracts are split into modules.
 + TokenAuction: `0x2890E2fD4522EA0f48F506FfD0f301ef5Cf98644`
 + ClockAuction: `0x8e9340B2F880809CCefC829EbB1d55922fDab28F`
 
+## Mainnet
+
++ TokenAuction: `0x119D9C14130aBf6870451ab76CBb2D9CB3afD630`
++ ClockAuction: `0x542d7f0Ae91Fd73ef666a0F5530e89D6ff43A97b`
 
 # API
 
